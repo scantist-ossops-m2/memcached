@@ -484,15 +484,11 @@ item *do_item_get(const char *key, const size_t nkey) {
     int was_found = 0;
 
     if (settings.verbose > 2) {
-        int ii;
         if (it == NULL) {
-            fprintf(stderr, "> NOT FOUND ");
+            fprintf(stderr, "> NOT FOUND %s", key);
         } else {
-            fprintf(stderr, "> FOUND KEY ");
+            fprintf(stderr, "> FOUND KEY %s", ITEM_key(it));
             was_found++;
-        }
-        for (ii = 0; ii < nkey; ++ii) {
-            fprintf(stderr, "%c", key[ii]);
         }
     }
 
